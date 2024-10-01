@@ -35,7 +35,12 @@
   <h2>Peer-to-Peer Chat App</h2>
 
   <div>
-    <button>SEND POSITION TO ALL USER</button>
+    <label for="my-peer-id">Your Peer ID:</label>
+    <input type="text" id="my-peer-id" readonly>
+    <br><br>
+    <label for="peer-id">Connect to Peer ID:</label>
+    <input type="text" id="peer-id">
+    <button id="connect">Connect</button>
   </div>
 
   <div id="chat"></div>
@@ -44,7 +49,7 @@
   <button id="send">Send</button>
 
   <script src="https://cdn.jsdelivr.net/npm/peerjs@1.3.1/dist/peerjs.min.js"></script>
-  <script src="./client.js"></script>
+  <script src="./app.js"></script>
 </body>
 
 </html>
