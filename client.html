@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peer-to-Peer Chat</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-
-    #chat {
-      border: 1px solid #ccc;
-      padding: 10px;
-      height: 300px;
-      overflow-y: scroll;
-    }
-
-    #message {
-      width: calc(100% - 70px);
-    }
-
-    #send {
-      width: 60px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer-to-Peer Chat Room</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        #chat { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; margin-bottom: 10px; }
+        #message { width: calc(100% - 70px); padding: 5px; }
+        #send { width: 60px; padding: 5px; }
+        #room-controls { margin-bottom: 20px; }
+        #share-room-btn { margin-left: 10px; padding: 5px 10px; }
+        #connect { margin-top: 10px; padding: 5px 10px; }
+        #peer-id { width: calc(100% - 70px); padding: 5px; }
+    </style>
 </head>
-
 <body>
 
-  <h2>Peer-to-Peer Chat App</h2>
+<h2>Peer-to-Peer Chat Room</h2>
 
-  <div>
+<div id="room-controls">
+    <label for="room-id">Room ID:</label>
+    <input type="text" id="room-id" placeholder="Enter Room ID or leave blank to create one">
+    <button id="join-room-btn">Join/Create Room</button>
+    <button id="share-room-btn">Share Room URL</button>
+</div>
+
+<div>
     <label for="my-peer-id">Your Peer ID:</label>
     <input type="text" id="my-peer-id" readonly>
-    <br><br>
-    <label for="peer-id">Connect to Peer ID:</label>
-    <input type="text" id="peer-id">
-    <button id="connect">Connect</button>
-  </div>
+</div>
 
-  <div id="chat"></div>
+<div id="chat"></div>
 
-  <input type="text" id="message" placeholder="Type your message...">
-  <button id="send">Send</button>
+<div style="display: flex;">
+    <input type="text" id="message" placeholder="Type your message...">
+    <button id="send">Send</button>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.3.1/dist/peerjs.min.js"></script>
-  <script src="./app.js"></script>
+<!-- Optional: Input and button to connect to specific peers manually -->
+<div id="manual-connect" style="margin-top: 20px;">
+</div>
+
+<!-- PeerJS library -->
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.4.7/dist/peerjs.min.js"></script>
+<!-- Your JavaScript file -->
+<script src="app.js"></script>
 </body>
-
 </html>
